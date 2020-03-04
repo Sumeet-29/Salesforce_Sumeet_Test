@@ -1,0 +1,73 @@
+<apex:page sidebar="true" showHeader="true" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations Sumeet!!</h1>
+  This is your new Page. This is My First VF page.
+  
+  <apex:form >
+   <apex:pageMessage summary="Validation error in the fields" severity="warning" strength="3">
+      
+      </apex:pageMessage>
+       <apex:pageMessage summary="Validation error in the fields" severity="info" strength="3">
+      
+      </apex:pageMessage>
+       <apex:pageMessage summary="Validation error in the fields" severity="error" strength="3">
+      
+      </apex:pageMessage>
+       <apex:pageMessage summary="Validation error in the fields" severity="confirm" strength="3">
+      
+      </apex:pageMessage>
+  <apex:pageBlock title="Information">
+  
+      <apex:pageBlockSection title="Basic Information">
+      
+       <p> Todays date is {!TODAY()}</p>
+       <p> Todays year is {!YEAR(TODAY())}</p>
+       <p> ToMORROW daY NUMBER is {!DAY(TODAY())+1}</p>
+       <p> mAXIMUM  is {!MAX(1,2,3,5,7,9,0)}</p>
+       <p> Square root is {!SQRT(49)}</p>
+       <p> Is it true {!Contains('Salesforce.com','force.com')}</p>
+  
+      <apex:pageBlockSectionItem >First Name : </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >Sumeet </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >Last Name : </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >Lall </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >LoggedIn User : </apex:pageBlockSectionItem>
+       <apex:pageBlockSectionItem >{!$User.FirstName} </apex:pageBlockSectionItem>
+      
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection title="Personal Information">
+       <apex:pageBlockSectionItem >Mothers Name : </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >Sheela Lall </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >Fathers Name : </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >Madan Lall </apex:pageBlockSectionItem>
+  
+      </apex:pageBlockSection>
+      
+       <apex:pageBlockSection title="Detail Information">
+           
+       <!--    <p>
+               {!IF(CONTAINS('Salesforce.com', 'force.com'),'yup','no')}
+              
+           </p>
+        -->
+       <apex:pageBlockSectionItem >Does it contains : </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+               {!IF(CONTAINS('Salesforce.com', 'force.com'),'yup','no')}
+           </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >Todays Date is: </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >{!IF(dAY(TODAY()) < 15,'LESS THEN 15','MORE THAN 15')} </apex:pageBlockSectionItem>
+           <apex:pageBlockSection >{!$User.FirstName & ' '& $User.LastName}</apex:pageBlockSection>
+           <apex:pageBlockSection >{!IF($User.IsActive,$User.Username,'Inactive')}</apex:pageBlockSection>
+  
+      </apex:pageBlockSection>
+      
+   <apex:pageBlockButtons >
+  <apex:commandButton value="Save"/>
+  <apex:commandButton value="Cancel"/>
+  </apex:pageBlockButtons>
+  </apex:pageBlock>
+ 
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

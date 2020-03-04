@@ -1,0 +1,20 @@
+<apex:page standardController="Account">
+         <p>
+              {!$User.FirstName}
+              
+           </p>
+    <apex:pageBlock >
+   
+      <apex:pageBlockSection title="Account Details">
+          Name:{!Account.Name}<br/>
+          Phone:{!Account.Phone}<br/>
+          Industry:{!Account.Industry}<br/>
+          Revenue:{!Account.AnnualRevenue}<br/>
+          <apex:detail relatedList="false"/>
+          <apex:relatedList list="Contacts"/>
+          <apex:relatedList list="Opportunities" pagesize="5"/>
+          
+      </apex:pageBlockSection>  
+        
+         </apex:pageBlock>
+</apex:page>
